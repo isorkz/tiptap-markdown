@@ -14,7 +14,8 @@ export default Text.extend({
         return {
             markdown: {
                 serialize(state, node) {
-                    state.text(escapeHTML(node.text));
+                    // state.text(escapeHTML(node.text));
+                    state.text(node.text, false);   // false = do not escape text
                 },
                 parse: {
                     // handled by markdown-it
